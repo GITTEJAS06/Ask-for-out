@@ -1,0 +1,47 @@
+ <<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">Yeeyy! Finally</h1>
+      </div>
+      <div class="gif_container">
+        <img
+          src="https://i.postimg.cc/wTDG30TB/yes.gif"
+          alt="Cute animated illustration"
+        />
+      </div>
+      <div id="dateContainer" style="display: none;">
+        <label for="datePicker">Select a Date:</label>
+        <input type="date" id="datePicker" name="selectedDate">
+        <button class="btn" onclick="confirmDate()">Confirm Your Date</button>
+      </div>
+      <div id="thankYouContainer" style="display: none;">
+        <h2>Thank You!</h2>
+        <p>Your date has been confirmed. We look forward to seeing you!</p>
+      </div>
+      <button class="btn" id="yesButton" onclick="nextPage()">
+        Let's Fix a Date
+      </button>
+    </div>
+    <script>
+      function nextPage() {
+        document.getElementById("yesButton").style.display = "none";
+        document.getElementById("dateContainer").style.display = "block";
+      }
+
+      function confirmDate() {
+        var selectedDate = document.getElementById("datePicker").value;
+        if (selectedDate !== "") {
+          document.getElementById("dateContainer").style.display = "none";
+          document.getElementById("thankYouContainer").style.display = "block";
+        } else {
+          alert("Please select a date before confirming.");
+        }
+      }
+    </script>
+  </body>
+</html>
